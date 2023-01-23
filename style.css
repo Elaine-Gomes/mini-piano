@@ -71,8 +71,11 @@ header .columm span{
     margin-top: 40px;
 }
 .piano-keys .key{
+    cursor: pointer;
     list-style:none;
     color:#a2a2a2;
+    position: relative;
+    text-transform: uppercase;
 }
 .piano-keys .black{
     width: 44px;
@@ -81,7 +84,11 @@ header .columm span{
     margin: 0 -22px;
     border-radius: 0 0 5px 5px;
     background: linear-gradient(#333 , #000);
- 
+    box-shadow: 0px 1px 6px rgb(0, 0, 0);
+}
+.piano-keys .black:active{
+    box-shadow: inherit -5px 5px 10px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to bottom,#000 ,#434343);
 }
 .piano-keys .white{
     width: 70px;
@@ -90,4 +97,16 @@ header .columm span{
     border: 1px solid rgb(1, 1, 1);
     background: linear-gradient(#fff 96%, #eee 4%);
     box-shadow: 0px 1px 6px rgb(11, 11, 11);
+}
+.piano-keys .white:active{
+    box-shadow: inherit -5px 5px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom,#fff 0%, rgb(232, 230, 230) 100%);
+}
+.piano-keys span{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    font-size: 1.13rem;
+    text-align: center;
+
 }
