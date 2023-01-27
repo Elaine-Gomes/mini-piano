@@ -2,7 +2,8 @@ const pianoKeys = document.querySelectorAll(".piano-keys .key"),
 volume = document.querySelector(".volume-slider input"),
 keysCheckbox = document.querySelector('.keys-checkbox input');
 
-//array que armazenas todas as chaves,que representam os tons
+
+//array que armazena todas as chaves,que representam os tons
 let allKeys=[],
 audio = new Audio('tunes/a.wav');
 
@@ -13,7 +14,7 @@ const playTune = (key)=>{
        clickedKey(key);
 }
 
-// adiciona a classe active 
+// adiciona a classe active e remove depois de um determinado tempo
 const clickedKey =(key)=>{
     const dataKey = document.querySelector(`[data-key="${key}"]`);
     dataKey.classList.add('active');
@@ -39,9 +40,10 @@ const handleVolume = (e)=>{
     audio.volume = e.target.value;
 }
 
-//se as teclas corresponder as chaves ,chama a função playTunes
+//se as teclas corresponderem as chaves ,chama a função playTunes
 const pressedKey = (e)=>{
      if(allKeys.includes(e.key)) playTune(e.key); 
+    
 }
 
 //eventos
